@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            -   name: Checkout code
+            -   name: Checkout-code
                 uses: action/checkout@v2
 
             -   name: node
