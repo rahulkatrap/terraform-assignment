@@ -59,7 +59,6 @@ resource "aws_ecs_service" "ecss" {
       security_groups = [aws_security_group.sg.id]
 
     }
-
   
 }
 resource "aws_lb" "mylb" {
