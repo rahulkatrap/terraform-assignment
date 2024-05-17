@@ -1,18 +1,16 @@
 name: CI/CD
 on:
     push:
-        branches: 
-            - main
+        branches: [$default-branch]
 jobs: 
     build:
         runs-on: ubuntu-latest
 
         steps:
-            -   name: Checkout-code
-                uses: action/checkout@v4
+            -  uses: actions/checkout@v4
 
             -   name: node
-                uses: action/setup-node@v2
+                uses: actions/setup-node@v3
                 with:
                     node-version: 'latest'
             -   name: dependency
