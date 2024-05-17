@@ -1,1 +1,20 @@
+name: CI/CD
+on:
+    push:
+        branches: 
+            - main
+jobs: 
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   name: Checkout code
+                uses: action/checkout@v2
+
+            -   name: node
+                uses: action/setup-node@v2
+                with:
+                    node-version: 'latest'
+            -   name: dependency
+                run: npm install
 
