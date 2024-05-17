@@ -2,21 +2,21 @@ name: CI/CD
 on:
     push:
         branches: 
-            -   main
-            
+            - main
+
 jobs: 
     build:
         runs-on: ubuntu-latest
 
         steps:
-            -  uses: actions/checkout@v4
+            - uses: actions/checkout@v4
 
-            -   name: node
-                uses: actions/setup-node@v3
-                with:
+            - name: node
+              uses: actions/setup-node@v3
+              with:
                     node-version: 'latest'
             -   name: dependency
                 run: npm install
 
-            -
+            
 
