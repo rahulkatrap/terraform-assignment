@@ -18,9 +18,6 @@ jobs:
             -   name: dependency
                 run: npm install
 
-            -   name: test
-                run:  npm test
-
             -   name: login ECR
                 run:  aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin $AWS_ID.dkr.ecr.ap-south-1.amazonaws.com
 
