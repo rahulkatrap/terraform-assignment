@@ -38,10 +38,10 @@ resource "aws_ecs_task_definition" "ecsd" {
     memory = 2048
     container_definitions = jsonencode([{
         name = "hello-world"
-        image = "${aws_account_id}.dkr.ecr.${aws_region}.amazonaws.com/hello-world:latest"
+        image = "312356219605.dkr.ecr.ap-south-1.amazonaws.com/my-repo:latest"
         portMappings=[{
-            containerPort = 80
-            hostPort = 80
+            containerPort = 3000
+            hostPort = 3000
 
         }]
     }])
