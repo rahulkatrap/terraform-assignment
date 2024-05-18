@@ -50,7 +50,7 @@ jobs:
                 uses: hashicorp/setup-terraform@v3
 
             -   name: cd 
-                run: cd /workspaces/terraform-assignment/terraform/
+                run: cd terraform/
 
 
             -   name:  init
