@@ -24,24 +24,15 @@ jobs:
             -   name: dependency
                 run: npm install 
                 
-            -   name: aws-login
-                uses: aws-actions/configure-aws-credentials@v1
+            -   name: Login  
+                uses: docker/login-action@v1
                 with:
-                    aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-                    aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-                    aws-region: ap-south-1
+                    username: ${{ secrets.USERNAME }}
+                    password: ${{ secrets.PASSWORD }}
 
-            -   name: ECR login
-                id: login-ecr
-                uses: aws-actions/amazon-ecr-login@v2
-                   
+            -   name: build
+                uses: docker build -t rkatrap/terra .
 
-            -   name: Build, tag, and push Docker image to Amazon ECR
-                env:
-                    ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
-                    ECR_REPOSITORY: mydeploy
-                    IMAGE_TAG: latest
-                run: |
-                        docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
-                        docker tag $ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-                        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+            -   name: push
+                uses: docker push rkatrap/terra:latest
+                
