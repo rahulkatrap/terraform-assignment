@@ -50,8 +50,10 @@ jobs:
                 uses: hashicorp/setup-terraform@v3
 
             -   name:  init
-                run: terraform init -f /workspaces/terraform-assignment/terraform/main.tf
+                run: cd /workspaces/terraform-assignment/terraform/
+                run: terraform init 
 
+                
             -   name:  plan
                 run: terraform plan
 
