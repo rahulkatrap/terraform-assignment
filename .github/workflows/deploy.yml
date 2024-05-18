@@ -49,11 +49,14 @@ jobs:
             -   name: terraform
                 uses: hashicorp/setup-terraform@v3
 
-            -   name:  init
+            -   name: cd 
                 run: cd /workspaces/terraform-assignment/terraform/
+
+
+            -   name:  init
                 run: terraform init 
 
-                
+
             -   name:  plan
                 run: terraform plan
 
