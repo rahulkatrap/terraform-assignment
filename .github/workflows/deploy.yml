@@ -24,9 +24,7 @@ jobs:
             -   name: dependency
                 run: npm install 
                 
-            -   name: aws-login
-                uses: aws-action/configure-aws-credentials@v1
-                with:
-                    role-to-assume: arn:aws:iam::312356219605:role/github1
-                    aws-region: ap-south-1
+           - name: Log in to Amazon ECR
+             id: login-ecr
+             uses: aws-actions/amazon-ecr-login@v1
                     
