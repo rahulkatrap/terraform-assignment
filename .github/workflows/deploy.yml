@@ -34,9 +34,7 @@ jobs:
             -   name: ECR login
                 id: login-ecr
                 uses: aws-actions/amazon-ecr-login@v2
-                    with:   
-                        registry: mydeploy
-                        region: ap-south-1
+                   
 
             -   name: Build, tag, and push Docker image to Amazon ECR
                 env:
