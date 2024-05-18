@@ -31,8 +31,8 @@ jobs:
                     password: ${{ secrets.PASSWORD }}
 
             -   name: build
-                uses: docker build -t rkatrap/terra .
+                run:  docker build -t rkatrap/terra .
 
             -   name: push
-                uses: docker push rkatrap/terra:latest
-                
+                run:  docker push rkatrap/terra:latest
+
