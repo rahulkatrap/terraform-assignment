@@ -25,7 +25,7 @@ jobs:
                 run: npm install 
                 
             -   name: aws-login
-                uses: aws-action/configure-aws-credentials@v4
+                uses: aws-action/configure-aws-credentials@v2
                 with:
                     role-to-assume: arn:aws:iam::312356219605:role/rahul
                     aws-region: ap-south-1
